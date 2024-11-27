@@ -20,13 +20,27 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="genetic_algorithm_thumbnail.png" alt="Logo">
-  </a>
 
-  <h3 align="center">Genetic Algorithm for Image Recreation</h3>
+  <h3 align="center">Genetic Algorithm for Image reconstruction</h3>
 
-  ![](https://github.com/SebastianCharmot/Genetic-Algorithm-Image-Recreation/blob/master/gif/mona_lisa.gif)
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+  <!-- Target Image Section (Right) -->
+  <div style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/Amir-rfz/Genetic-algorithm-image-reconstruction/main/target_images/eagle.jpg" 
+         alt="Target Image" 
+         style="width: 300px; border: 1px solid #ddd; border-radius: 8px;">
+    <p style="font-size: 14px; color: #555;">Target Image</p>
+  </div>
+  
+  <!-- GIF Section (Left) -->
+  <div style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/Amir-rfz/Genetic-algorithm-image-reconstruction/main/result-gif.gif" 
+         alt="Result GIF" 
+         style="width: 300px; border: 1px solid #ddd; border-radius: 8px;">
+    <p style="font-size: 14px; color: #555;">Result of the Genetic Algorithm</p>
+  </div>
+
+</div>
 
   <p align="center">
     A from scratch Python implementation of a genetic algorithm that recreates a target image. 
@@ -147,30 +161,43 @@ Using the following libraries:
 * [Pillow](https://pillow.readthedocs.io/en/stable/index.html) (Image manipulation)
 * [Matplotlib](https://matplotlib.org/) (Image display)
 * [Numpy](https://numpy.org/) (Perform vectorized image manipulation and calculations)
+* [OpenCV (cv2)](https://opencv.org/) (Efficient image processing and handling)
 * [Colour](https://colour.readthedocs.io/en/latest/index.html) (Delta E color difference calculations)
 
 <!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The first step is installing the necessary libraries. This can be done by running the following:
+### Step 1: Install the Required Libraries
 
+Ensure all necessary libraries are installed by running the following command:
 ```
-pip3 install -r requirements.txt
-```
-
-Getting started with the genetica algorithm is as simple as instantiating a GP class from GP.py as the following:
-
-``` 
-gp = GP(r"target_image.png")
-fittest = gp.run_gp(100, 500)
-plt.imshow(fittest.image)
-plt.show()
+pip3 install -r requirements.txx
 ```
 
-The arguments of the `run_gp` method are `(size of the initial population, number of generations to run)`. For most of my experiments, an initial population of size 100 and 5,000 generations was enough to produce great results. By vectorizing the majority of the image manipulations, I am able to run those settings comfortably on my laptop with a run-time of several minutes. 
+### Step 2: Using the Genetic Algorithm
+
+Getting started with the genetic algorithm is simple! Update the following variables in the code:
+
+```python
+from PIL import Image
+from resize import resize
+
+# Set the target image path and resize it
+target_image_path = "path/to/your/target/image"
+image = Image.open(target_image_path)
+image = resize(image, 100)
+
+# Initialize parameters
+width, height = image.size
+population_size = 50
+triangles_number = 100
+
+# Run the Genetic Algorithm
+alg = GeneticAlgorithm(width, height, image, population_size, triangles_number)
+alg.run(3010)
+```
 
 <!-- USAGE EXAMPLES -->
 ## Hyperparameters

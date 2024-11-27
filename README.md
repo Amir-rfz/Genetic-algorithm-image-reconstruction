@@ -18,7 +18,6 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
 
   <h3 align="center">Genetic Algorithm for Image reconstruction</h3>

@@ -172,7 +172,7 @@ Using the following libraries:
 
 Ensure all necessary libraries are installed by running the following command:
 ```
-pip3 install -r requirements.txx
+pip3 install -r requirements.txt
 ```
 
 ### Step 2: Using the Genetic Algorithm
@@ -480,7 +480,7 @@ Given all this information about how the specific hyperparameters work, you can 
 ## Results
 
 <div align="center">
-    <img src="gif/fittest_14999.png" width="396" height="458" >
+    <img src="figures/result.png" width="500" height="300" >
 </div>
 
 <!-- 1. Open a Pull Request -->
